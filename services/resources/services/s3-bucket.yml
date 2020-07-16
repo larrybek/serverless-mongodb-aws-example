@@ -1,0 +1,20 @@
+Resources:
+  S3BucketContent:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${opt:S3_BUCKET}-${opt:stage, 'dev'}
+
+Outputs:
+  S3BucketContentName:
+    Value:
+      Ref: S3BucketContent
+    Export:
+      Name: S3BucketContentName-${opt:stage, 'dev'}
+
+  S3BucketContentARN:
+    Value:
+      Fn::GetAtt:
+        - S3BucketContent
+        - Arn
+    Export:
+      Name: S3BucketContentARN-${opt:stage, 'dev'}

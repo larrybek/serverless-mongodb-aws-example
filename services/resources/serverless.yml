@@ -1,0 +1,19 @@
+service: resource
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - states:StartExecution
+      Resource: "*"
+
+resources:
+  # S3
+  - ${file(services/s3-bucket.yml)}
