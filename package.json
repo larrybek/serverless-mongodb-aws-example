@@ -15,7 +15,7 @@
     "lint": "eslint '**/*.js' --ignore-pattern node_modules/"
   },
   "dependencies": {
-    "aws-sdk": "^2.478.0",
+    "aws-sdk": "^2.1361.0",
     "bodybuilder": "^2.2.20",
     "bunyan": "^1.8.12",
     "lodash": "^4.17.15",
